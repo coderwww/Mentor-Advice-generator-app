@@ -1,3 +1,4 @@
+const adviceGenerator = document.querySelector(".advice-generator");
 const adviceId = document.querySelector(".advice-id span");
 const adviceText = document.querySelector(".advice-text span");
 
@@ -15,6 +16,7 @@ async function getAdvice(){
         if (json.slip){
             adviceId.textContent = json.slip.id;
             adviceText.textContent = json.slip.advice;
+            adviceGenerator.classList.toggle('is-flipped');
         }else{
             console.log(json);
         }
