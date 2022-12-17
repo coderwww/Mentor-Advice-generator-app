@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(218deg, 23%, 16%);
+}
+
+.advice-generator {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 540px;
+  padding: 50px 7% 70px;
+  margin: 10px 3% 40px;
+  background-color: hsl(217deg, 19%, 24%);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font: 800 28px/1.4em "Manrope", sans-serif;
+  color: hsl(193deg, 38%, 86%);
+  text-align: center;
+  position: relative;
+}
+.advice-generator .advice-id {
+  font-size: 0.38em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: hsl(150deg, 100%, 66%);
+  letter-spacing: 0.35em;
+  margin-bottom: 25px;
+}
+.advice-generator .advice-text {
+  font-size: 85%;
+  line-height: 1.4em;
+}
+.advice-generator .advice-text::after {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 100%;
+  background: url("../images/pattern-divider-mobile.svg") no-repeat center center;
+  margin-top: 35px;
+}
+.advice-generator .advice-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 65px;
+  height: 65px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: hsl(150deg, 100%, 66%) url("../images/icon-dice.svg") no-repeat center center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow 0.5s ease;
+}
+.advice-generator .advice-button:active {
+  box-shadow: 0 0 40px 0 hsl(150deg, 100%, 66%);
+}
+
+@media screen and (min-width: 576px) {
+  .advice-generator {
+    padding: 50px 45px 70px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+  .advice-generator .advice-id {
+    font-size: 0.45em;
+  }
+  .advice-generator .advice-text {
+    font-size: 100%;
+  }
+  .advice-generator .advice-text::after {
+    background: url("../images/pattern-divider-desktop.svg") no-repeat center center;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .advice-generator .advice-button:hover {
+    box-shadow: 0 0 40px 0 hsl(150deg, 100%, 66%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

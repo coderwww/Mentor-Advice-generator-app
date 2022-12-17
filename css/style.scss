@@ -1,0 +1,99 @@
+// Colors
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+@mixin radius($radius: 0){
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-blue;
+}
+
+.advice-generator {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 540px;
+    padding: 50px 7% 70px;
+    margin: 10px 3% 40px;
+    background-color: $dark-grayish-blue;
+    @include radius(10px);
+    font: 800 28px / 1.4em 'Manrope', sans-serif;
+    color: $light-cyan;
+    text-align: center;
+    position: relative;
+    .advice-id {
+        font-size: 0.38em;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        color: $neon-green;
+        letter-spacing: 0.35em;
+        margin-bottom: 25px;
+    }
+    .advice-text {
+        font-size: 85%;
+        line-height: 1.4em;
+        &::after {
+            content: '';
+            display: block;
+            height: 20px;
+            width: 100%;
+            background: url('../images/pattern-divider-mobile.svg') no-repeat center center;
+            margin-top: 35px;
+        }
+    }
+    .advice-button {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 65px;
+        height: 65px;
+        @include radius(50%);
+        background: $neon-green url('../images/icon-dice.svg') no-repeat center center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;  // remove rectangle on touch
+        transition: box-shadow 0.5s ease;
+        &:active {
+            box-shadow: 0 0 40px 0 $neon-green;
+        }
+    }
+}
+
+
+@media screen and (min-width: 576px) {
+    .advice-generator {
+        padding: 50px 45px 70px;
+        @include radius(20px);
+        .advice-id {
+            font-size: 0.45em;
+        }
+        .advice-text{
+            font-size: 100%;
+            &::after {
+                background: url('../images/pattern-divider-desktop.svg') no-repeat center center;
+            }
+        }
+    }
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .advice-generator .advice-button:hover {
+        box-shadow: 0 0 40px 0 $neon-green;
+    }
+}
